@@ -1,0 +1,6 @@
+@TarikhMaghribi_HostAddress = http://localhost:5197
+
+GET {{TarikhMaghribi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

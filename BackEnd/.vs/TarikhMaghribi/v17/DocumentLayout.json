@@ -1,0 +1,441 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\migrations\\20241028220434_addtasktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:migrations\\20241028220434_addtasktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\statistiquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\statistiquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dbcontext\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dbcontext\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\auth\\registredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\auth\\registredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dbcontext\\models\\jourferie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dbcontext\\models\\jourferie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dbcontext\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dbcontext\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\tarikhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\tarikhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\jourferiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\jourferiedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\extentions\\customjwtauthextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:extentions\\customjwtauthextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\auth\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\auth\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\migrations\\20241028150950_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:migrations\\20241028150950_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\extentions\\mail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:extentions\\mail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\tarikhmaghribi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:tarikhmaghribi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\migrations\\20241028150950_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:migrations\\20241028150950_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\migrations\\20241028203602_addjourferietable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:migrations\\20241028203602_addjourferietable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20241028220434_AddTaskTable.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028220434_AddTaskTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241028220434_AddTaskTable.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028220434_AddTaskTable.cs",
+              "RelativeToolTip": "Migrations\\20241028220434_AddTaskTable.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T22:04:34.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ChangePasswordDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\ChangePasswordDto.cs",
+              "RelativeDocumentMoniker": "DTO\\ChangePasswordDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\ChangePasswordDto.cs",
+              "RelativeToolTip": "DTO\\ChangePasswordDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:45:54.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\UserProfileDto.cs",
+              "RelativeDocumentMoniker": "DTO\\UserProfileDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\UserProfileDto.cs",
+              "RelativeToolTip": "DTO\\UserProfileDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:43:11.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StatistiquesController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\StatistiquesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StatistiquesController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\StatistiquesController.cs",
+              "RelativeToolTip": "Controllers\\StatistiquesController.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAAALcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:29:55.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:52:59.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAADYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:46:06.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwCAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:21:09.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "DBContext\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\AppUser.cs",
+              "RelativeToolTip": "DBContext\\Models\\AppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:56:57.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegistreDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\RegistreDto.cs",
+              "RelativeDocumentMoniker": "DTO\\Auth\\RegistreDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\RegistreDto.cs",
+              "RelativeToolTip": "DTO\\Auth\\RegistreDto.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:36:51.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "DBContext\\Models\\Task.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\Task.cs",
+              "RelativeToolTip": "DBContext\\Models\\Task.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAYwBgAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:57:47.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TarikhController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\TarikhController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TarikhController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\TarikhController.cs",
+              "RelativeToolTip": "Controllers\\TarikhController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAuwBIAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:44:53.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TaskDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\TaskDto.cs",
+              "RelativeDocumentMoniker": "DTO\\TaskDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\TaskDto.cs",
+              "RelativeToolTip": "DTO\\TaskDto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:58:47.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JourFerieDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\JourFerieDto.cs",
+              "RelativeDocumentMoniker": "DTO\\JourFerieDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\JourFerieDto.cs",
+              "RelativeToolTip": "DTO\\JourFerieDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:30:06.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DBContext\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\AppDbContext.cs",
+              "RelativeToolTip": "DBContext\\AppDbContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:49:48.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JourFerie.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\JourFerie.cs",
+              "RelativeDocumentMoniker": "DBContext\\Models\\JourFerie.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DBContext\\Models\\JourFerie.cs",
+              "RelativeToolTip": "DBContext\\Models\\JourFerie.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAzwBAAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:34:16.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20241028203602_AddJourFerieTable.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028203602_AddJourFerieTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241028203602_AddJourFerieTable.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028203602_AddJourFerieTable.cs",
+              "RelativeToolTip": "Migrations\\20241028203602_AddJourFerieTable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T20:36:02.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAABBwAwAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T11:42:43.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwA8AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-28T15:00:19.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ResetPasswordRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\ResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\Auth\\ResetPasswordRequest.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\ResetPasswordRequest.cs",
+              "RelativeToolTip": "DTO\\Auth\\ResetPasswordRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:51:44.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\LoginDto.cs",
+              "RelativeDocumentMoniker": "DTO\\Auth\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\LoginDto.cs",
+              "RelativeToolTip": "DTO\\Auth\\LoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:52:20.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CustomJwtAuthExtention.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Extentions\\CustomJwtAuthExtention.cs",
+              "RelativeDocumentMoniker": "Extentions\\CustomJwtAuthExtention.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Extentions\\CustomJwtAuthExtention.cs",
+              "RelativeToolTip": "Extentions\\CustomJwtAuthExtention.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:54:50.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:52:23.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20241028150950_Initial.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028150950_Initial.Designer.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241028150950_Initial.Designer.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028150950_Initial.Designer.cs",
+              "RelativeToolTip": "Migrations\\20241028150950_Initial.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:52:23.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20241028150950_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028150950_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241028150950_Initial.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Migrations\\20241028150950_Initial.cs",
+              "RelativeToolTip": "Migrations\\20241028150950_Initial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:09:50.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Mail.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Extentions\\Mail.cs",
+              "RelativeDocumentMoniker": "Extentions\\Mail.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Extentions\\Mail.cs",
+              "RelativeToolTip": "Extentions\\Mail.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:45:07.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TarikhMaghribi.csproj",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\TarikhMaghribi.csproj",
+              "RelativeDocumentMoniker": "TarikhMaghribi.csproj",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\TarikhMaghribi.csproj",
+              "RelativeToolTip": "TarikhMaghribi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-28T14:47:12.205Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
