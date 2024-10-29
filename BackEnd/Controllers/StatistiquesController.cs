@@ -84,6 +84,7 @@ namespace TarikhMaghribi.Controllers
             {
                 return NotFound("User not found.");
             }
+            var roles = await _userManager.GetRolesAsync(user);
 
             var userProfile = new UserProfileDto
             {
@@ -92,12 +93,13 @@ namespace TarikhMaghribi.Controllers
                 Prenom = user.Prenom,
                 Phone = user.PhoneNumber ?? "-",
                 DateDeNaissance = user.DateDeNaissance,
+                Roles = roles.ToList()
             };
 
             return Ok(userProfile);
         }
         [HttpPost("UpdateUserProfile")]
-        public async Task<IActionResult> UpdateUserProfile([FromBody] UserProfileDto model)
+        public async Task<IActionResult> UpdateUserProfile([FromBody] UserProfileUpdateDto model)
         {
             var user = await _userManager.GetUserAsync(User);
 

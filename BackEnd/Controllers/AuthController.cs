@@ -97,7 +97,7 @@ namespace TarikhMaghribi.Controllers
                             {
                                 return BadRequest("Veuillez vérifier votre e-mail avant de vous connecter.");
                             }
-                            var token = GenerateJwtToken(user);
+                            var token = await GenerateJwtToken(user);
                             return Ok(token);
                         }
                         else
@@ -117,7 +117,8 @@ namespace TarikhMaghribi.Controllers
             }
             return BadRequest();
         }
-        private string GenerateJwtToken(AppUser user)
+        private async Task<string> GenerateJwtToken(AppUser user)
+
         {
             var claims = new List<Claim>
             {
@@ -125,8 +126,7 @@ namespace TarikhMaghribi.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
-
-            var roles = _userManager.GetRolesAsync(user).Result;
+            var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));

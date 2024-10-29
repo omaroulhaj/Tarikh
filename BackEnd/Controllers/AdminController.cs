@@ -12,7 +12,7 @@ namespace TarikhMaghribi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "superutilisateur")]
+    [Authorize(Roles ="superutilisateur")]
 
     public class AdminController : ControllerBase
     {
@@ -149,11 +149,10 @@ namespace TarikhMaghribi.Controllers
         {
             if (!User.IsInRole("superutilisateur"))
             {
+               
                 return Unauthorized(new { message = "Vous n'avez pas les autorisations nécessaires pour effectuer cette action." });
             }
-
             var currentUserId = _userManager.GetUserId(User);
-
             try
             {
                 var users = await _userManager.Users
@@ -168,7 +167,7 @@ namespace TarikhMaghribi.Controllers
                     result.Add(new
                     {
                         user.Id,
-                        user.UserName,
+                        username=user.Prenom+" "+user.Nom,
                         user.Email,
                         user.Prenom,
                         user.Nom,

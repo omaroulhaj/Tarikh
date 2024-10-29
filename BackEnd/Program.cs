@@ -12,14 +12,26 @@ builder.Services.AddTransient<ISenderEmail, EmailService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
     options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultProvider;
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGenJwtAuth();
 builder.Services.AddCustomJwtAuth(builder.Configuration);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularLocalhost",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials();
+        });
+});
+
 
 var app = builder.Build();
+app.UseCors("AllowAngularLocalhost");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,6 +42,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

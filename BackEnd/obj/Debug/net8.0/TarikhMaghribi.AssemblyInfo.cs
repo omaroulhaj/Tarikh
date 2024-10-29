@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TarikhMaghribi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bc8c85bbe6c7bc8600e0e2e70f54e2deedc1184")]
 [assembly: System.Reflection.AssemblyProductAttribute("TarikhMaghribi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TarikhMaghribi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
