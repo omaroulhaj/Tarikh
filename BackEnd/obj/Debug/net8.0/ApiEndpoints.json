@@ -1,0 +1,376 @@
+[
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "CreateJourFerie",
+    "RelativePath": "api/Admin/create-jour-ferie",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jourFerieDto",
+        "Type": "TarikhMaghribi.DTO.JourFerieDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "DeleteJourFerie",
+    "RelativePath": "api/Admin/delete-jour-ferie/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Admin/delete/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "GetUserDetails",
+    "RelativePath": "api/Admin/details/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "GetJoursFeries",
+    "RelativePath": "api/Admin/jours-feries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "UpdateJourFerie",
+    "RelativePath": "api/Admin/update-jour-ferie/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "jourFerieDto",
+        "Type": "TarikhMaghribi.DTO.JourFerieDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AdminController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Admin/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AuthController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/Auth/confirmemail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AuthController",
+    "Method": "LogIn",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "TarikhMaghribi.DTO.Auth.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AuthController",
+    "Method": "RegisterNewUser",
+    "RelativePath": "api/Auth/registre",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "TarikhMaghribi.DTO.Auth.RegistreDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AuthController",
+    "Method": "RequestPasswordReset",
+    "RelativePath": "api/Auth/requestpasswordreset",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.AuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Auth/resetpassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TarikhMaghribi.DTO.Auth.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.StatistiquesController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Statistiques/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TarikhMaghribi.DTO.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.StatistiquesController",
+    "Method": "DeleteAccount",
+    "RelativePath": "api/Statistiques/DeleteUserAccount",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.StatistiquesController",
+    "Method": "GetUserProfile",
+    "RelativePath": "api/Statistiques/GetUserProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.StatistiquesController",
+    "Method": "GetTaskStatistics",
+    "RelativePath": "api/Statistiques/task-stats/{annee}/{mois}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "annee",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mois",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.StatistiquesController",
+    "Method": "UpdateUserProfile",
+    "RelativePath": "api/Statistiques/UpdateUserProfile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "TarikhMaghribi.DTO.UserProfileUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TarikhController",
+    "Method": "GetJoursFeriesByMonthAndYear",
+    "RelativePath": "api/Tarikh/jours-feries/{annee}/{mois}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "annee",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mois",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TasksController",
+    "Method": "CreateTask",
+    "RelativePath": "api/Tasks/create-task",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskDto",
+        "Type": "TarikhMaghribi.DTO.TaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TasksController",
+    "Method": "DeleteTask",
+    "RelativePath": "api/Tasks/delete-task/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TasksController",
+    "Method": "GetTasksByMonthAndYear",
+    "RelativePath": "api/Tasks/tasks/{annee}/{mois}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "annee",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mois",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TasksController",
+    "Method": "GetUserTasksRecentToOld",
+    "RelativePath": "api/Tasks/tasks/recent-to-old",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TarikhMaghribi.Controllers.TasksController",
+    "Method": "UpdateTask",
+    "RelativePath": "api/Tasks/update-task/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskDto",
+        "Type": "TarikhMaghribi.DTO.TaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

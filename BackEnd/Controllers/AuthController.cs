@@ -95,10 +95,10 @@ namespace TarikhMaghribi.Controllers
                         {
                             if (!user.EmailConfirmed)
                             {
-                                return BadRequest("Veuillez vérifier votre e-mail avant de vous connecter.");
+                                return BadRequest(new { error="Veuillez vérifier votre e-mail avant de vous connecter." });
                             }
                             var token = await GenerateJwtToken(user);
-                            return Ok(token);
+                            return Ok(new { Token = token });
                         }
                         else
                         {
