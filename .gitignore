@@ -15,7 +15,7 @@ BackEnd/appsettings.json
 
 # Fichiers de configuration Angular (ignorés)
 FrontEnd/node_modules/
-
+FrontEnd/.angular/
 # Autres fichiers temporaires (ignorés)
 *.log
 
