@@ -1,9 +1,9 @@
 # Répertoires de compilation
-/bin/
-/obj/
+BackEnd/bin/
+BackEnd/obj/
 
 # Répertoire de configuration de Visual Studio
-/.vs/
+BackEnd/.vs/
 
 # Fichiers de configuration spécifiques à l'utilisateur
 *.user
@@ -12,7 +12,7 @@
 *.sln.docstates
 
 # Fichiers de configuration Angular
-node_modules/
+FrontEnd/node_modules/
 
 # Autres fichiers temporaires
 *.log
@@ -21,15 +21,15 @@ node_modules/
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+FrontEnd/dist
+FrontEnd/tmp
+FrontEnd/out-tsc
+FrontEnd/bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+FrontEnd/node_modules
+FrontEnd/npm-debug.log
+FrontEnd/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -49,13 +49,13 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+FrontEnd/.angular/cache
 .sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+FrontEnd/connect.lock
+FrontEnd/coverage
+FrontEnd/libpeerconnection.log
+FrontEnd/testem.log
+FrontEnd/typings
 
 # System files
 .DS_Store
