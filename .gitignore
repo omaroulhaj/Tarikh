@@ -4,6 +4,8 @@ BackEnd/obj/
 
 # Répertoire de configuration de Visual Studio (ignoré)
 BackEnd/.vs/
+# Ignorer les fichiers de configuration sensibles
+BackEnd/appsettings.json
 
 # Fichiers de configuration spécifiques à l'utilisateur (ignorés)
 *.user
