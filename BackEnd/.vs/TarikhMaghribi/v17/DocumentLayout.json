@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HASSAN\\Desktop\\CI-GI\\S5\\Cloud Computing\\Projet\\Tarikh\\BackEnd\\",
+  "WorkspaceRootPath": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\hassan\\desktop\\ci-gi\\s5\\cloud computing\\projet\\tarikh\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\hassan\\desktop\\ci-gi\\s5\\cloud computing\\projet\\tarikh\\backend\\dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|c:\\users\\omar oulhaj\\desktop\\tarikhmaghribi\\backend\\dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BFEDF50-5473-40B4-BE6E-390AD4B61045}|TarikhMaghribi.csproj|solutionrelative:dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\HASSAN\\Desktop\\CI-GI\\S5\\Cloud Computing\\Projet\\Tarikh\\BackEnd\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\HASSAN\\Desktop\\CI-GI\\S5\\Cloud Computing\\Projet\\Tarikh\\BackEnd\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAAFgAAAAAAAAAAAAAAGEAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\HASSAN\\Desktop\\CI-GI\\S5\\Cloud Computing\\Projet\\Tarikh\\BackEnd\\DTO\\Auth\\LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\LoginDto.cs",
               "RelativeDocumentMoniker": "DTO\\Auth\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\HASSAN\\Desktop\\CI-GI\\S5\\Cloud Computing\\Projet\\Tarikh\\BackEnd\\DTO\\Auth\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\Omar Oulhaj\\Desktop\\TarikhMaghribi\\BackEnd\\DTO\\Auth\\LoginDto.cs",
               "RelativeToolTip": "DTO\\Auth\\LoginDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,3 +1,23 @@
+# Répertoires de compilation
+/bin/
+/obj/
+
+# Répertoire de configuration de Visual Studio
+/.vs/
+
+# Fichiers de configuration spécifiques à l'utilisateur
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Fichiers de configuration Angular
+node_modules/
+
+# Autres fichiers temporaires
+*.log
+
+
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
