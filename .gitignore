@@ -24,6 +24,12 @@ FrontEnd/dist
 FrontEnd/tmp
 FrontEnd/out-tsc
 FrontEnd/bazel-out
+# Ignorer les fichiers binaires et de cache de Visual Studio
+BackEnd/.vs/**/*.bin
+BackEnd/.vs/**/*.v8
+BackEnd/.vs/ProjectEvaluation/
+BackEnd/.vs/TarikhMaghribi/DesignTimeBuild/
+BackEnd/.vs/TarikhMaghribi/config/applicationhost.config
 
 # Node (ignorés)
 FrontEnd/node_modules
