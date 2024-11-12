@@ -1,37 +1,34 @@
-# Répertoires de compilation
+# Répertoires de compilation (ignorés pour ne pas suivre les fichiers d'exécution)
 BackEnd/bin/
 BackEnd/obj/
 
-# Répertoire de configuration de Visual Studio
+# Répertoire de configuration de Visual Studio (ignoré)
 BackEnd/.vs/
 
-# Fichiers de configuration spécifiques à l'utilisateur
+# Fichiers de configuration spécifiques à l'utilisateur (ignorés)
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Fichiers de configuration Angular
+# Fichiers de configuration Angular (ignorés)
 FrontEnd/node_modules/
 
-# Autres fichiers temporaires
+# Autres fichiers temporaires (ignorés)
 *.log
 
-
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# Compiled output
+# Compiled output (ignorés)
 FrontEnd/dist
 FrontEnd/tmp
 FrontEnd/out-tsc
 FrontEnd/bazel-out
 
-# Node
+# Node (ignorés)
 FrontEnd/node_modules
 FrontEnd/npm-debug.log
 FrontEnd/yarn-error.log
 
-# IDEs and editors
+# IDEs and editors (ignorés)
 .idea/
 .project
 .classpath
@@ -40,7 +37,7 @@ FrontEnd/yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
+# Visual Studio Code (ignoré, sauf les fichiers de configuration)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -48,7 +45,7 @@ FrontEnd/yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-# Miscellaneous
+# Miscellaneous (ignorés)
 FrontEnd/.angular/cache
 .sass-cache/
 FrontEnd/connect.lock
@@ -57,6 +54,6 @@ FrontEnd/libpeerconnection.log
 FrontEnd/testem.log
 FrontEnd/typings
 
-# System files
+# System files (ignorés)
 .DS_Store
 Thumbs.db
