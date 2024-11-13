@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component'; 
+import { LoginComponent } from './Auth/login/login.component';
+import { RegisterComponent } from './Auth/register/register.component'; 
 
 // Angular Material Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +23,9 @@ import { ToastModule } from 'primeng/toast';
 import { HomeComponent } from './home/home.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { FogetPasswordComponent } from './foget-password/foget-password.component';
+import { FogetPasswordComponent } from './Auth/foget-password/foget-password.component';
+import { ResetPasswordComponent } from './Auth/reset-password/reset-password.component';
+import { ActivateAccountComponent } from './Auth/activate-account/activate-account.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FogetPasswordComponent } from './foget-password/foget-password.componen
     RegisterComponent,
     HomeComponent,
     DialogComponent,
-    FogetPasswordComponent
+    FogetPasswordComponent,
+    ResetPasswordComponent,
+    ActivateAccountComponent
   ],
   imports: [
     BrowserModule,

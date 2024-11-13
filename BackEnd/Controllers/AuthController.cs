@@ -127,65 +127,83 @@ namespace TarikhMaghribi.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-        [HttpGet("confirmemail")]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        [HttpPost("confirmemail")]
+        public async Task<IActionResult> ConfirmEmail(Activate dto)
         {
-            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
+            if (string.IsNullOrWhiteSpace(dto.userId) || string.IsNullOrWhiteSpace(dto.token))
             {
-                return BadRequest("User ID or token is missing.");
+                return BadRequest(new { message = "User ID or token is missing." });
             }
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(dto.userId);
             if (user == null)
             {
-                return BadRequest("User not found.");
+                return BadRequest(new { message = "User not found." });
             }
 
-            var result = await _userManager.ConfirmEmailAsync(user, token);
+            var result = await _userManager.ConfirmEmailAsync(user, dto.token);
             if (result.Succeeded)
             {
-                return Ok("Email confirmed successfully.");
+                return Ok(new { message = "Email confirmed successfully." });
             }
 
-            return BadRequest("Email confirmation failed.");
+            // Ajout d'un message plus détaillé
+            if (result.Errors.Any())
+            {
+                var errorMessages = string.Join(", ", result.Errors.Select(e => e.Description));
+                return BadRequest(new { message = "Email confirmation failed.", details = errorMessages });
+            }
+
+            return BadRequest(new { message = "Email confirmation failed." });
         }
+
 
         [HttpPost("requestpasswordreset")]
-        public async Task<IActionResult> RequestPasswordReset([FromBody] string email)
+        public async Task<IActionResult> RequestPasswordReset(ResetPasswordRequest req)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null)
+            try
             {
-                return BadRequest("User not found.");
+                var user = await _userManager.FindByEmailAsync(req.Email);
+                if (user == null)
+                {
+                    return BadRequest(new { message = "User not found." });
+                }
+
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var resetLink = $"{_configuration["JWT:Audience"]}/resetpassword?token={Uri.EscapeDataString(token)}&email={req.Email}";
+                var emailBody = $"Please reset your password by clicking this link: <a href='{resetLink}'>Reset Password</a>";
+
+                // Assurez-vous que l'envoi d'email ne pose pas de problème
+                await _emailSender.SendEmailAsync(req.Email, "Password Reset", emailBody);
+
+                return Ok(new { message = "Password reset link sent to your email." });
             }
-
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = $"{_configuration["JWT:Audience"]}/resetpassword?token={Uri.EscapeDataString(token)}&email={email}";
-            var emailBody = $"Please reset your password by clicking this link: <a href='{resetLink}'>Reset Password</a>";
-            await _emailSender.SendEmailAsync(email, "Password Reset", emailBody);
-
-            return Ok("Password reset link sent to your email.");
+            catch (Exception ex)
+            {
+                // Log l'erreur ici pour le suivi, et renvoie une erreur générique mais explicite
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
         }
 
+
         [HttpPost("resetpassword")]
-        public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
+        public async Task<IActionResult> ResetPassword(ResetPassword request)
         {
             if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Token) || string.IsNullOrWhiteSpace(request.NewPassword))
             {
-                return BadRequest("Invalid request data.");
+                return BadRequest(new { message = "Invalid request data." });
             }
 
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
-                return BadRequest("User not found.");
+                return BadRequest(new { message = "User not found." });
             }
 
             var result = await _userManager.ResetPasswordAsync(user, request.Token, request.NewPassword);
             if (result.Succeeded)
             {
-                return Ok("Password has been reset successfully.");
+                return Ok(new { message ="Password has been reset successfully." });
             }
 
             var errors = result.Errors.Select(e => e.Description).ToList();

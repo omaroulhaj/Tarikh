@@ -37,24 +37,43 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/register`, userData)
       .pipe(catchError(this.handleError));
   }
+  confirmEmail(userId: string, token: string): Observable<any> {
+    const body = { userId, token };
+    return this.http.post(`${this.apiUrl}/confirmemail`, body, {
+      headers: { 'Content-Type': 'application/json' }
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Password reset methods
   requestPasswordReset(email: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/requestpasswordreset`, { email })
-      .pipe(catchError(this.handleError));
+    return this.http.post(
+      `${this.apiUrl}/requestpasswordreset`,
+      { email }
+    ).pipe(
+      catchError(error => {
+        const errorMessage = error?.error?.message || error?.message || 'An unexpected error occurred. Please try again later.';
+        return throwError(() => new Error(errorMessage));
+      })
+    );
   }
 
   resetPassword(email: string, token: string, newPassword: string): Observable<any> {
     const data = { email, token, newPassword };
     return this.http.post(`${this.apiUrl}/resetpassword`, data)
-      .pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleError)); 
   }
+  
 
   // Utility methods for token handling
-  getToken(): string | null {
-    return localStorage.getItem('token');
+  private getToken(): string | null {
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem('token');
+    }
+    return null;
   }
-
+  
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
