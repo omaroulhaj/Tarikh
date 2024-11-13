@@ -21,13 +21,16 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { HomeComponent } from './home/home.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { HomeComponent } from './home/home.component';
     ToastModule 
   ],
   providers: [
-    provideHttpClient(withFetch()) // Enable fetch for HttpClient
+    provideHttpClient(withFetch()),
+    provideAnimationsAsync() // Enable fetch for HttpClient
   ],
   bootstrap: [AppComponent]
 })
