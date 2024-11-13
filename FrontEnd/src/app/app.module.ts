@@ -23,6 +23,7 @@ import { ToastModule } from 'primeng/toast';
 import { HomeComponent } from './home/home.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FogetPasswordComponent } from './foget-password/foget-password.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    DialogComponent
+    DialogComponent,
+    FogetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   providers: [
     provideHttpClient(withFetch()),
-    provideAnimationsAsync() // Enable fetch for HttpClient
+    provideAnimationsAsync() 
   ],
   bootstrap: [AppComponent]
 })

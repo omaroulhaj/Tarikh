@@ -18,34 +18,29 @@ namespace TarikhMaghribi.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
-        private readonly IConfiguration configuration;
-        private readonly ISenderEmail emailSender;
+        private readonly IConfiguration _configuration;
+        private readonly ISenderEmail _emailSender;
 
-        public AuthController(UserManager<AppUser> userManager, AppDbContext context, IConfiguration configuration, RoleManager<IdentityRole> roleManager,ISenderEmail emailSender)
+        public AuthController(UserManager<AppUser> userManager, AppDbContext context, IConfiguration configuration, RoleManager<IdentityRole> roleManager, ISenderEmail emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _context = context;
-            this.configuration = configuration;
-            this.emailSender = emailSender;
-
-
+            _configuration = configuration;
+            _emailSender = emailSender;
         }
 
-        [HttpPost("registre")]
+        [HttpPost("register")]
         public async Task<IActionResult> RegisterNewUser(RegistreDto user)
         {
-            var emailExists = await _userManager.FindByEmailAsync(user.email) != null;
-
-            if (emailExists)
+            if (await _userManager.FindByEmailAsync(user.email) != null)
             {
-                return BadRequest(new { errors = new { email = " L'email est déjà utilisé." } });
+                return BadRequest(new { errors = new { email = "Email is already in use." } });
             }
 
             if (!ModelState.IsValid)
             {
-
-                return BadRequest();
+                return BadRequest("Invalid data provided.");
             }
 
             AppUser appUser = new()
@@ -58,67 +53,55 @@ namespace TarikhMaghribi.Controllers
                 DateDeNaissance = user.dateDeNaissance,
             };
 
-            IdentityResult result = await _userManager.CreateAsync(appUser, user.password);
+            var result = await _userManager.CreateAsync(appUser, user.password);
             if (result.Succeeded)
             {
-                IdentityResult roleResult = await _userManager.AddToRoleAsync(appUser, "usernormal");
-
+                var roleResult = await _userManager.AddToRoleAsync(appUser, "usernormal");
                 if (!roleResult.Succeeded)
                 {
-                    ModelState.AddModelError("role", "Erreur lors de l'ajout du rôle à l'utilisateur.");
-                    return BadRequest(new { errors = new { role = "Erreur lors de l'ajout du rôle à l'utilisateur." } });
+                    return BadRequest(new { errors = new { role = "Failed to assign role to user." } });
                 }
 
                 var token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
-                var confirmationLink = $"{configuration["JWT:Audience"]}/activateaccount?userId={appUser.Id}&token={Uri.EscapeDataString(token)}";
-                var emailBody = $"Veuillez confirmer votre e-mail en cliquant sur ce lien : <a href='{confirmationLink}'>Confirmer l'e-mail</a>";
-                await emailSender.SendEmailAsync(appUser.Email, "Confirmation de votre e-mail", emailBody);
-                return Ok(new { message = "Success", token });
+                var confirmationLink = $"{_configuration["JWT:Audience"]}/activateaccount?userId={appUser.Id}&token={Uri.EscapeDataString(token)}";
+                var emailBody = $"Please confirm your email by clicking this link: <a href='{confirmationLink}'>Confirm Email</a>";
+                await _emailSender.SendEmailAsync(appUser.Email, "Email Confirmation", emailBody);
+
+                return Ok(new { message = "Registration successful. Please check your email for confirmation." });
             }
-            else
-            {
-                return BadRequest();
-            }
+
+            return BadRequest("Registration failed. Please try again.");
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> LogIn(LoginDto login)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    AppUser? user = await _userManager.FindByEmailAsync(login.email);
-                    if (user != null)
-                    {
-                        if (await _userManager.CheckPasswordAsync(user, login.password))
-                        {
-                            if (!user.EmailConfirmed)
-                            {
-                                return BadRequest(new { error="Veuillez vérifier votre e-mail avant de vous connecter." });
-                            }
-                            var token = await GenerateJwtToken(user);
-                            return Ok(new { Token = token });
-                        }
-                        else
-                        {
-                            return Unauthorized("Email ou mot de passe incorrect");
-                        }
-                    }
-                    else
-                    {
-                        return Unauthorized("An error occurred while processing your request.");
-                    }
-                }
-                catch
-                {
-                    return StatusCode(500, "An error occurred while processing your request.");
-                }
+                return BadRequest("Invalid login data.");
             }
-            return BadRequest();
-        }
-        private async Task<string> GenerateJwtToken(AppUser user)
 
+            var user = await _userManager.FindByEmailAsync(login.email);
+            if (user == null)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            if (!await _userManager.CheckPasswordAsync(user, login.password))
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            if (!user.EmailConfirmed)
+            {
+                return BadRequest(new { error = "Email is not yet confirmed." });
+            }
+
+            var token = await GenerateJwtToken(user);
+            return Ok(new { Token = token });
+        }
+
+        private async Task<string> GenerateJwtToken(AppUser user)
         {
             var claims = new List<Claim>
             {
@@ -132,11 +115,11 @@ namespace TarikhMaghribi.Controllers
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
-                issuer: configuration["JWT:Issuer"],
-                audience: configuration["JWT:Audience"],
+                issuer: _configuration["JWT:Issuer"],
+                audience: _configuration["JWT:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(10),
                 signingCredentials: creds
@@ -144,24 +127,28 @@ namespace TarikhMaghribi.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
         [HttpGet("confirmemail")]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
             {
-                return BadRequest();
+                return BadRequest("User ID or token is missing.");
             }
+
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                return BadRequest();
+                return BadRequest("User not found.");
             }
+
             var result = await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
-                return Ok();
+                return Ok("Email confirmed successfully.");
             }
-            return BadRequest();
+
+            return BadRequest("Email confirmation failed.");
         }
 
         [HttpPost("requestpasswordreset")]
@@ -174,20 +161,17 @@ namespace TarikhMaghribi.Controllers
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = $"{configuration["JWT:Audience"]}/resetpassword?token={Uri.EscapeDataString(token)}&email={email}";
-
+            var resetLink = $"{_configuration["JWT:Audience"]}/resetpassword?token={Uri.EscapeDataString(token)}&email={email}";
             var emailBody = $"Please reset your password by clicking this link: <a href='{resetLink}'>Reset Password</a>";
-            await emailSender.SendEmailAsync(email, "Password Reset", emailBody);
+            await _emailSender.SendEmailAsync(email, "Password Reset", emailBody);
 
-            return Ok("Password reset link sent.");
+            return Ok("Password reset link sent to your email.");
         }
 
         [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request.Email) ||
-                string.IsNullOrWhiteSpace(request.Token) ||
-                string.IsNullOrWhiteSpace(request.NewPassword))
+            if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Token) || string.IsNullOrWhiteSpace(request.NewPassword))
             {
                 return BadRequest("Invalid request data.");
             }
@@ -208,7 +192,4 @@ namespace TarikhMaghribi.Controllers
             return BadRequest(new { Errors = errors });
         }
     }
-
-    
 }
-
