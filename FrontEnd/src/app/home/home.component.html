@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="home-layout">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
+    </aside>
+
+    <main class="main-content" [class.sidebar-closed]="isSidebarClosed">
+      <div class="content-wrapper">
+        <h1>Bienvenue sur la page d'accueil</h1>
+        <p>Explorez les fonctionnalités de notre application avec une navigation fluide et intuitive.</p>
+      </div>
+    </main>
+  </div>
+</div>

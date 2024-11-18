@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'forget-password', component: FogetPasswordComponent }, 
   { path: 'activateaccount', component: ActivateAccountComponent }, 
   { path: 'resetpassword', component: ResetPasswordComponent }, 
+  { path: 'sidebar', component: ResetPasswordComponent }, 
+  { path: 'navbar', component: ResetPasswordComponent }, 
   { path: 'home', component: HomeComponent, canActivate: [authGuard] }, 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

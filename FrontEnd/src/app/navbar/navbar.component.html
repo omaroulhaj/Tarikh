@@ -1,0 +1,15 @@
+<mat-toolbar class="mat-elevation-z8 navbar">
+  <img src="../../assets/images/tm.png" alt="Tarikh Maghribi" class="app-logo">
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button color="primary" class="user-button" (click)="openDialog()">
+    <div class="user-info">
+      <span>{{ userName }}</span>&nbsp;&nbsp;
+      <mat-icon class="fiber-manual-record">fiber_manual_record</mat-icon>
+    </div>
+  </button>
+
+  <button *ngIf="isLoggedIn()" (click)="logout()" mat-icon-button>
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

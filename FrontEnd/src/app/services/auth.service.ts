@@ -65,18 +65,42 @@ export class AuthService {
       .pipe(catchError(this.handleError)); 
   }
   
+  // Utility method to decode JWT token
+  private decodeToken(token: string): any {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      console.error('Error decoding token:', e);
+      return null;
+    }
+  }
 
-  // Utility methods for token handling
+  // Methods to extract information from the token
+  getUserNameFromToken(): string {
+    const token = this.getToken();
+    if (!token) {
+      return '';
+    }
+    const decodedToken = this.decodeToken(token);
+    return decodedToken ? decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'] || '' : '';
+  }
+
+  // Token management
   private getToken(): string | null {
     if (typeof localStorage !== 'undefined') {
       return localStorage.getItem('token');
     }
     return null;
   }
-  
+
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
 
   // Error handling
   private handleError(error: HttpErrorResponse) {
