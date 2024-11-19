@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';  // Ajoutez cette ligne
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { RegisterComponent } from './Auth/register/register.component';
@@ -22,7 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgModule } from '@angular/core';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarModule } from 'primeng/calendar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -50,23 +55,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    // Angular Material Modules
-    MatChipsModule,
-    MatCardModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatIconModule,
-    InputTextModule,
-    CardModule,
-    ToastModule,
-    // Ajouter le FullCalendar ou PrimeNG Calendar
+    MatFormFieldModule,
     FullCalendarModule, // Pour FullCalendar
     CalendarModule, // Pour PrimeNG Calendar
-    MatFormFieldModule,
-    MatButtonModule,
-    MatButtonModule,
-    // RouterModule, assurez-vous que RouterModule est bien présent
-    RouterModule
+    MatButtonModule,  // Assurez-vous de ne pas dupliquer
+    RouterModule,
+    MatChipsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [
     provideHttpClient(withFetch())
