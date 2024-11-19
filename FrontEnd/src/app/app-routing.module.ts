@@ -8,6 +8,7 @@ import { authGuard } from './auth.guard';
 import { ResetPasswordComponent } from './Auth/reset-password/reset-password.component';
 import { ActivateAccountComponent } from './Auth/activate-account/activate-account.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'sidebar', component: ResetPasswordComponent, canActivate: [authGuard]  }, 
   { path: 'navbar', component: ResetPasswordComponent, canActivate: [authGuard]  }, 
   { path: 'add-task-modal', component: AddTaskModalComponent, canActivate: [authGuard]  }, 
+  { path: 'profil', component: ProfilComponent, canActivate: [authGuard]  }, 
   { path: 'home', component: HomeComponent, canActivate: [authGuard] }, 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

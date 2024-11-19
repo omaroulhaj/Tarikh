@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   selectedDate: Date | null = null;
   tasks: { [date: string]: { title: string }[] } = {};
   isModalOpen = false; // For task modal visibility
+  currentView: 'task' | 'calendar' | 'day' = 'calendar';
 
   // Toggle de la barre latérale
   toggleSidebar() {
@@ -64,6 +65,13 @@ export class HomeComponent implements OnInit {
   nextMonth() {
     this.currentMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1, 1);
     this.generateCalendar();
+  }
+
+  switchView(view: 'calendar' | 'task' | 'day'): void {
+    this.currentView = view;
+    if (view === 'task') {
+    } else if (view === 'day') {
+    }
   }
 
   selectDay(day: { date: Date; otherMonth: boolean }) {

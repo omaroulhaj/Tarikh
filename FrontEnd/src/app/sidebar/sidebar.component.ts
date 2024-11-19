@@ -10,7 +10,7 @@ export class SidebarComponent {
   isClosed = false;
   menuItems = [
     { label: 'Home', route: '/home', icon: 'fa fa-home' },
-    { label: 'Profile', route: '/add-task-modal', icon: 'fa fa-user' },
+    { label: 'Profile', route: '/profil', icon: 'fa fa-user' },
     { label: 'Settings', route: '/settings', icon: 'fa fa-cog' },
   ];
 

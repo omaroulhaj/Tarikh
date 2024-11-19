@@ -51,3 +51,26 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-in-out;
   }
+
+  .card-header {
+    background: url('../../assets/images/background.png') no-repeat center center;
+    background-size: cover; 
+    color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .card-header .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-header .ml-3 {
+    margin-left: 1rem;
+  }
+  

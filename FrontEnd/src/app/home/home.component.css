@@ -80,27 +80,6 @@ header {
   margin-bottom: 20px;
 }
 
-.btn {
-  background-color: #0066cc;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0055b3;
-}
-
-.add-task-btn {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  background-color: #28a745; /* Vert pour l'ajout de tâche */
-}
-
 .calendar-controls {
   display: flex;
   justify-content: space-between;
@@ -173,11 +152,11 @@ header {
 }
 
 /* Ajout d'une couleur de fond au corps du calendrier */
-.calendar-request-container {
+.calendar-task-container {
   margin-top: 10px;
 }
 
-.calendar-request {
+.calendar-task {
   background-color: #f1f1f1;
   padding: 5px;
   border-radius: 4px;
@@ -186,7 +165,7 @@ header {
   color: #333;
 }
 
-.calendar-request .request-status {
+.calendar-task .task-status {
   display: inline-block;
   padding: 3px 5px;
   border-radius: 4px;
@@ -194,11 +173,11 @@ header {
   color: white;
 }
 
-.calendar-request .request-status.pending {
+.calendar-task .task-status.pending {
   background-color: orange;
 }
 
-.calendar-request .request-status.completed {
+.calendar-task .task-status.completed {
   background-color: green;
 }
 
@@ -234,4 +213,75 @@ header {
   .calendar-body {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Groupe de boutons */
+.btn-group {
+  display: inline-flex; /* Affiche les boutons côte à côte */
+}
+
+.btn-group .btn {
+  padding: 12px 24px;
+  border: 2px solid #ea0303; /* Bordure rouge pour les boutons */
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  background-color: #fff;
+  color: #ea0303;
+  margin: 0; /* Supprimer les marges pour que les boutons soient collés */
+}
+
+.btn-group .view-calendar-btn {
+  border-top-left-radius: 25px; /* Arrondi du coin supérieur gauche */
+  border-bottom-left-radius: 25px; /* Arrondi du coin inférieur gauche */
+}
+
+.btn-group .view-task-btn {
+  border-top-right-radius: 25px; /* Arrondi du coin supérieur droit */
+  border-bottom-right-radius: 25px; /* Arrondi du coin inférieur droit */
+}
+
+.btn-group .btn:hover {
+  box-shadow: 0 4px 15px rgba(255, 28, 28, 0.4);
+}
+
+.btn-group .btn-active {
+  background: url('../../assets/images/background.png') no-repeat center center !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff;
+}
+
+.btn-group .btn-active:hover {
+  box-shadow: none;
+}
+
+.btn-group .view-task-btn::before {
+  content: '\f067'; /* Icône pour "Ajouter tâche" */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.btn-group .view-calendar-btn::before {
+  content: '\f073'; /* Icône pour "Voir calendrier" */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.btn-group .btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Styles supplémentaires pour la gestion de l'activation du bouton */
+.btn-active {
+  background-color: #ea0303 !important;
+  color: #ffffff !important;
+  border-color: #ea0303;
 }
