@@ -4,15 +4,52 @@
   </header>
 
   <div class="main-container">
-    <aside class="sidebar">
+    <aside class="sidebar" [class.closed]="isSidebarClosed">
       <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
     </aside>
 
     <main class="main-content" [class.sidebar-closed]="isSidebarClosed">
       <div class="content-wrapper">
-        <h1>Bienvenue sur la page d'accueil</h1>
-        <p>Explorez les fonctionnalités de notre application avec une navigation fluide et intuitive.</p>
+        <!-- Title -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h2 class="mb-0">Task's Calendar</h2>
+        </div>
+        <button class="btn add-task-btn" (click)="openAddTaskModal()">Ajouter une tâche</button>
+
+        <!-- Calendar Controls -->
+        <div class="calendar-controls">
+          <button class="btn btn-secondary previous-month-btn" (click)="previousMonth()">Précédent</button>
+          <h2 class="calendar-month">{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+          <button class="btn btn-secondary next-month-btn" (click)="nextMonth()">Suivant</button>
+        </div>
+
+        <!-- Calendar Header -->
+        <div class="calendar-header">
+          <div *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" class="calendar-day-header">
+            {{ day }}
+          </div>
+        </div>
+
+        <!-- Calendar Body -->
+        <div class="calendar-body">
+          <div *ngFor="let week of calendarWeeks" class="calendar-week">
+            <div *ngFor="let day of week"
+              class="calendar-day"
+              [ngClass]="{'other-month': day.otherMonth, 'selected': isSelectedDay(day.date)}"
+              (click)="selectDay(day)">
+              <div class="calendar-date">{{ day.date | date: 'dd' }}</div>
+              <div class="calendar-task-container">
+                <div *ngFor="let task of getTasksForDay(day.date)" class="calendar-task">
+                  <span class="task-title">{{ task.title }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
+
+  <!-- Modal for Adding Tasks -->
+  <app-add-task-modal *ngIf="isModalOpen" (close)="closeModal()"></app-add-task-modal>
 </div>

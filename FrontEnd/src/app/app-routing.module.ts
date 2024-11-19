@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { authGuard } from './auth.guard';
 import { ResetPasswordComponent } from './Auth/reset-password/reset-password.component';
 import { ActivateAccountComponent } from './Auth/activate-account/activate-account.component';
+import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,8 +15,9 @@ const routes: Routes = [
   { path: 'forget-password', component: FogetPasswordComponent }, 
   { path: 'activateaccount', component: ActivateAccountComponent }, 
   { path: 'resetpassword', component: ResetPasswordComponent }, 
-  { path: 'sidebar', component: ResetPasswordComponent }, 
-  { path: 'navbar', component: ResetPasswordComponent }, 
+  { path: 'sidebar', component: ResetPasswordComponent, canActivate: [authGuard]  }, 
+  { path: 'navbar', component: ResetPasswordComponent, canActivate: [authGuard]  }, 
+  { path: 'add-task-modal', component: AddTaskModalComponent, canActivate: [authGuard]  }, 
   { path: 'home', component: HomeComponent, canActivate: [authGuard] }, 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -1,0 +1,19 @@
+<div class="home-layout">
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+  
+    <div class="main-container">
+      <aside class="sidebar" [class.closed]="isSidebarClosed">
+        <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
+      </aside>
+  
+      <main class="main-content" [class.sidebar-closed]="isSidebarClosed">
+        <div class="content-wrapper">
+
+        </div>
+      </main>
+    </div>
+  
+  </div>
+  

@@ -13,14 +13,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar'; // Module pour MatToolbar
-import { MatIconModule } from '@angular/material/icon'; // Module pour MatIcon
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 // PrimeNG Modules
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
+
+// Calendar Module (Ajouté pour le calendrier)
+import { FullCalendarModule } from '@fullcalendar/angular'; // Si vous utilisez FullCalendar
 
 // Components
 import { HomeComponent } from './home/home.component';
@@ -30,6 +33,11 @@ import { ResetPasswordComponent } from './Auth/reset-password/reset-password.com
 import { ActivateAccountComponent } from './Auth/activate-account/activate-account.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
+// Ajouter des imports spécifiques pour le calendrier si vous l'utilisez dans votre application
+import { CalendarModule } from 'primeng/calendar';
+import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
+import { ProfilComponent } from './profil/profil.component'; // Si vous utilisez PrimeNG Calendar
 
 @NgModule({
   declarations: [
@@ -42,28 +50,34 @@ import { NavbarComponent } from './navbar/navbar.component';
     ResetPasswordComponent,
     ActivateAccountComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddTaskModalComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
 
     // Angular Material Modules
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatToolbarModule, // Ajouter MatToolbarModule
-    MatIconModule, // Ajouter MatIconModule
+    MatToolbarModule,
+    MatIconModule,
 
     // PrimeNG Modules
     ButtonModule,
     InputTextModule,
     CardModule,
-    ToastModule 
+    ToastModule,
+    
+    // Ajouter le FullCalendar ou PrimeNG Calendar
+    FullCalendarModule, // Pour FullCalendar
+    CalendarModule // Pour PrimeNG Calendar (si vous optez pour PrimeNG)
   ],
   providers: [
     provideHttpClient(withFetch())
