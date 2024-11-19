@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Auth/login/login.component';
 import { RegisterComponent } from './Auth/register/register.component';
 import { FogetPasswordComponent } from './Auth/foget-password/foget-password.component';
@@ -9,11 +8,14 @@ import { ResetPasswordComponent } from './Auth/reset-password/reset-password.com
 import { ActivateAccountComponent } from './Auth/activate-account/activate-account.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
 import { ProfilComponent } from './profil/profil.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }, 
   { path: 'forget-password', component: FogetPasswordComponent }, 
+  { path: 'user-management', component: UserManagementComponent }, 
   { path: 'activateaccount', component: ActivateAccountComponent }, 
   { path: 'resetpassword', component: ResetPasswordComponent }, 
   { path: 'sidebar', component: ResetPasswordComponent, canActivate: [authGuard]  }, 
