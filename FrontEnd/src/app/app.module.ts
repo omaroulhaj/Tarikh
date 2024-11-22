@@ -28,7 +28,9 @@ import { CalendarModule } from 'primeng/calendar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-
+import { CardModule } from 'primeng/card';
+import { MatInputModule } from '@angular/material/input'; // Pour matInput
+import { MatSelectModule } from '@angular/material/select'; // Pour matSelect
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,6 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
@@ -58,11 +59,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     FullCalendarModule, // Pour FullCalendar
     CalendarModule, // Pour PrimeNG Calendar
-    MatButtonModule,  // Assurez-vous de ne pas dupliquer
     RouterModule,
     MatChipsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,CardModule,MatSelectModule,MatInputModule
   ],
   providers: [
     provideHttpClient(withFetch())
