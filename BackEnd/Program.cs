@@ -1,14 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TarikhMaghribi.DBContext;
-using TarikhMaghribi.DBContext.Models;
-using TarikhMaghribi.Extentions;
-using static TarikhMaghribi.Extentions.Mail;
+using TarikhMaghribi.Models.Entities;
+using TarikhMaghribi.Utils.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);
+//services
+builder.Services.AddApplicationServices(builder.Configuration);
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TarikhDB")));
-builder.Services.AddTransient<ISenderEmail, EmailService>();
+
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
     options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultProvider;
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();

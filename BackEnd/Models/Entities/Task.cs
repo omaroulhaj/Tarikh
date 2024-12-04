@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TarikhMaghribi.DBContext.Models
+namespace TarikhMaghribi.Models.Entities
 {
     public class Task
     {
@@ -9,7 +9,7 @@ namespace TarikhMaghribi.DBContext.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }  
+        public DateTime Date { get; set; }
 
         [Required]
         [MaxLength(100)]

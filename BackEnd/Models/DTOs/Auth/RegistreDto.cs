@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TarikhMaghribi.DTO.Auth
+namespace TarikhMaghribi.Models.DTOs.Auth
 {
     public class RegistreDto
     {
@@ -16,7 +16,7 @@ namespace TarikhMaghribi.DTO.Auth
         [Required]
         public string phoneNumber { get; set; }
         [Required]
-        public DateTime dateDeNaissance { get; set; } 
+        public DateTime dateDeNaissance { get; set; }
 
     }
 }

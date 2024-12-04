@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TarikhMaghribi.DTO
+namespace TarikhMaghribi.Models.DTOs
 {
     public class JourFerieDto
     {

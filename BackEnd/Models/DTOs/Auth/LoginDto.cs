@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TarikhMaghribi.DTO.Auth
+namespace TarikhMaghribi.Models.DTOs.Auth
 {
     public class LoginDto
     {

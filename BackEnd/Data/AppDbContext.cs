@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TarikhMaghribi.DBContext.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using TarikhMaghribi.Models.Entities;
 
 namespace TarikhMaghribi.DBContext
 {
@@ -13,7 +13,7 @@ namespace TarikhMaghribi.DBContext
         }
 
         public DbSet<JourFerie> JoursFeries { get; set; }
-        public DbSet<Models.Task> Tasks { get; set; }
+        public DbSet<Models.Entities.Task> Tasks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

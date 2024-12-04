@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-namespace TarikhMaghribi.Extentions
+namespace TarikhMaghribi.Services
 {
     public class Mail
     {

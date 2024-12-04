@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace TarikhMaghribi.Extentions
+namespace TarikhMaghribi.Utils.Extentions
 {
     public static class CustomJwtAuthExtention
     {

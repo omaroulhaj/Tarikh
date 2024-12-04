@@ -1,4 +1,4 @@
-﻿namespace TarikhMaghribi.DTO
+﻿namespace TarikhMaghribi.Models.DTOs
 {
     public class ChangePasswordDto
     {

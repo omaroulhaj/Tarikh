@@ -1,4 +1,4 @@
-﻿namespace TarikhMaghribi.DTO.Auth
+﻿namespace TarikhMaghribi.Models.DTOs.Auth
 {
     public class ResetPassword
     {

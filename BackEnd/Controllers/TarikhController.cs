@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using static TarikhMaghribi.Extentions.Mail;
-using TarikhMaghribi.DBContext.Models;
 using TarikhMaghribi.DBContext;
 using Microsoft.EntityFrameworkCore;
+using TarikhMaghribi.Services.Interfaces;
 
 namespace TarikhMaghribi.Controllers
 {
@@ -12,26 +11,19 @@ namespace TarikhMaghribi.Controllers
     [ApiController]
     public class TarikhController : ControllerBase
     {
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly AppDbContext _context;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly IConfiguration configuration;
-        public TarikhController(UserManager<AppUser> userManager, AppDbContext context, IConfiguration configuration, RoleManager<IdentityRole> roleManager, ISenderEmail emailSender)
+        private readonly IJourFerieService _jourFerieService;
+
+        public TarikhController(IJourFerieService jourFerieService)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
-            _context = context;
-            this.configuration = configuration;
+            _jourFerieService = jourFerieService;
         }
+
         [HttpGet("jours-feries/{annee}/{mois}")]
         public async Task<IActionResult> GetJoursFeriesByMonthAndYear(int annee, int mois)
         {
             try
             {
-                var joursFeries = await _context.JoursFeries
-                    .Where(jf => jf.DateJour.Year == annee && jf.DateJour.Month == mois)
-                    .OrderBy(jf => jf.DateJour)
-                    .ToListAsync();
+                var joursFeries = await _jourFerieService.GetJoursFeriesByMonthAndYear(annee, mois);
 
                 return Ok(joursFeries);
             }
