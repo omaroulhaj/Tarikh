@@ -1,0 +1,14 @@
+<div class="sidebar-container" [class.closed]="isClosed">
+  <div class="sidebar-header" [class.closed]="isClosed">
+    <button (click)="toggleSidebarState()" class="toggle-btn" [class.closed]="isClosed">
+      <span *ngIf="isClosed">☰</span>
+      <span *ngIf="!isClosed">✕</span>
+    </button>
+  </div>
+  <ul class="sidebar-menu" [class.closed]="isClosed">
+    <li *ngFor="let item of menuItems" (click)="navigate(item.route)">
+      <i [class]="item.icon"></i>
+      <span *ngIf="!isClosed">{{ item.label }}</span>
+    </li>
+  </ul>
+</div>

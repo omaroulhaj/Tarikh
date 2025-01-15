@@ -1,0 +1,35 @@
+<div class="day-view">
+  <!-- Contrôles du jour -->
+  <div class="day-controls">
+    <button class="btn btn-secondary previous-day-btn" (click)="navigateDay('previous')">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <h2 class="day-date">{{ dayViewDate | date: 'fullDate' }}</h2>
+    <button class="btn btn-secondary next-day-btn" (click)="navigateDay('next')">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Filtres -->
+  <div class="filters">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Filtrer par titre..." (input)="filterTasks()">
+    <select [(ngModel)]="statusFilter" (change)="filterTasks()">
+      <option value="">Tous les statuts</option>
+      <option value="pas en cours">Pas en cours</option>
+      <option value="en cours">En cours</option>
+      <option value="terminé">Terminé</option>
+    </select>
+  </div>
+
+  <!-- Liste des tâches -->
+  <div class="day-tasks">
+    <div *ngFor="let task of filteredTasks" class="calendar-task" [ngClass]="{
+      'not-started': task.status === 'pas en cours',
+      'in-progress': task.status === 'en cours',
+      'completed': task.status === 'terminé'
+    }">
+      <span class="task-title">{{ task.title }}</span>
+      <span class="task-status">{{ task.status }}</span>
+    </div>
+  </div>
+</div>

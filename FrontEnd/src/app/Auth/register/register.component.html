@@ -1,0 +1,129 @@
+<div class="register-container">
+  <p-card class="register-card">
+    <div class="logo-container">
+      <img src="./assets/images/tm.png" alt="App Logo" class="app-logo" />
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="p-field p-fluid">
+        <label for="prenom" class="bold-label">Prénom</label>
+        <div class="icon-input">
+          <i class="pi pi-user"></i>
+          <input
+            id="prenom"
+            type="text"
+            pInputText
+            formControlName="prenom"
+            class="p-inputtext"
+            placeholder="Enter your first name"
+          />
+        </div>
+        <small *ngIf="formControls['prenom'].invalid && (formControls['prenom'].dirty || formControls['prenom'].touched)" class="p-error">
+          Prénom est requis.
+        </small>
+      </div>
+
+      <div class="p-field p-fluid">
+        <label for="nom" class="bold-label">Nom</label>
+        <div class="icon-input">
+          <i class="pi pi-user"></i>
+          <input
+            id="nom"
+            type="text"
+            pInputText
+            formControlName="nom"
+            class="p-inputtext"
+            placeholder="Enter your last name"
+          />
+        </div>
+        <small *ngIf="formControls['nom'].invalid && (formControls['nom'].dirty || formControls['nom'].touched)" class="p-error">
+          Nom est requis.
+        </small>
+      </div>
+
+      <div class="p-field p-fluid">
+        <label for="email" class="bold-label">Email</label>
+        <div class="icon-input">
+          <i class="pi pi-envelope"></i>
+          <input
+            id="email"
+            type="email"
+            pInputText
+            formControlName="email"
+            class="p-inputtext"
+            placeholder="Enter your email"
+          />
+        </div>
+        <small *ngIf="formControls['email'].invalid && (formControls['email'].dirty || formControls['email'].touched)" class="p-error">
+          Veuillez entrer un email valide.
+        </small>
+      </div>
+
+      <div class="p-field p-fluid">
+        <label for="password" class="bold-label">Mot de passe</label>
+        <div class="icon-input">
+          <i class="pi pi-lock"></i>
+          <input
+            id="password"
+            type="password"
+            pInputText
+            formControlName="password"
+            class="p-inputtext"
+            placeholder="Enter your password"
+          />
+        </div>
+        <small *ngIf="formControls['password'].errors?.['required'] && (formControls['password'].dirty || formControls['password'].touched)" class="p-error">
+          Le mot de passe est requis.
+        </small>
+        <small *ngIf="formControls['password'].errors?.['minlength'] && (formControls['password'].dirty || formControls['password'].touched)" class="p-error">
+          Le mot de passe doit contenir au moins 8 caractères.
+        </small>
+        <small *ngIf="formControls['password'].errors?.['pattern'] && (formControls['password'].dirty || formControls['password'].touched)" class="p-error">
+          Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial.
+        </small>        
+      </div>
+
+      <div class="p-field p-fluid">
+        <label for="phoneNumber" class="bold-label">Numéro de téléphone</label>
+        <div class="icon-input">
+          <i class="pi pi-phone"></i>
+          <input
+            id="phoneNumber"
+            type="text"
+            pInputText
+            formControlName="phoneNumber"
+            class="p-inputtext"
+            placeholder="Enter your phone number"
+          />
+        </div>
+        <small *ngIf="formControls['phoneNumber'].invalid && (formControls['phoneNumber'].dirty || formControls['phoneNumber'].touched)" class="p-error">
+          Le numéro de téléphone est requis.
+        </small>
+      </div>
+
+      <div class="p-field p-fluid">
+        <label for="dateDeNaissance" class="bold-label">Date de naissance</label>
+        <div class="icon-input">
+          <i class="pi pi-calendar"></i>
+          <input id="dateDeNaissance" type="date" pInputText formControlName="dateDeNaissance" class="p-inputtext" />
+        </div>
+        <small *ngIf="formControls['dateDeNaissance'].invalid && (formControls['dateDeNaissance'].dirty || formControls['dateDeNaissance'].touched)" class="p-error">
+          La date de naissance est requise.
+        </small>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="S'inscrire"
+        icon="pi pi-user-plus"
+        class="btn-primary full-width"
+        [disabled]="registerForm.invalid"
+      ></button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </p-card>
+</div>

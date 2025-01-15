@@ -1,0 +1,11 @@
+<div class="activate-account-container">
+    <div *ngIf="loading" class="loading-spinner">
+      <i class="pi pi-spin pi-spinner"></i>
+    </div>
+    
+    <div *ngIf="!loading">
+      <p *ngIf="userId && token">Attempting to confirm your email...</p>
+      <p *ngIf="!userId || !token">Invalid URL parameters.</p>
+    </div>
+  </div>
+  

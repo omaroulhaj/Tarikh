@@ -1,0 +1,114 @@
+.day-view {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.day-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.day-controls button {
+  background-color: #ea0303; /* Rouge */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.day-controls button:hover {
+  background-color: #c40202; /* Rouge plus foncé au survol */
+}
+
+.day-date {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters input,
+.filters select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #ea0303;
+}
+
+.filters input {
+  flex: 1;
+}
+
+.filters select {
+  background-color: #fff;
+  color: #333;
+}
+
+.day-tasks {
+  margin-top: 20px;
+}
+
+.day-tasks .calendar-task {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.day-tasks .calendar-task.not-started {
+  background-color: #ffa500; /* Orange pour les tâches "pas en cours" */
+  color: white; /* Texte en blanc pour un meilleur contraste */
+}
+
+.day-tasks .calendar-task.in-progress {
+  background-color: #007bff; /* Bleu pour les tâches "en cours" */
+  color: white; /* Texte en blanc pour un meilleur contraste */
+}
+
+.day-tasks .calendar-task.completed {
+  background-color: #4caf50; /* Vert pour les tâches "terminé" */
+  color: white; /* Texte en blanc pour un meilleur contraste */
+}
+
+.day-tasks .task-status {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: white;
+}

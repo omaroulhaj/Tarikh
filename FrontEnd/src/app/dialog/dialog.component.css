@@ -1,0 +1,107 @@
+.dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: backdropFadeIn 0.4s ease;
+  }
+  
+  @keyframes backdropFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .dialog-container {
+    width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    animation: dialogPopIn 0.3s ease forwards;
+    text-align: center;
+    position: relative;
+  }
+  
+  @keyframes dialogPopIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .dialog-header {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.75rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f77f00, #fcbf49);
+    color: #fff;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dialog-header.info {
+    background: linear-gradient(135deg, #007bff, #00f2fe);
+  }
+  
+  .dialog-header.warning {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+  }
+  
+  .dialog-header.error {
+    background: linear-gradient(135deg, #ff4b5c, #ff6b6b);
+  }
+  
+  .dialog-header.confirmation {
+    background: linear-gradient(135deg, #38a169, #68d391);
+  }
+  
+  .dialog-body {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn-primary, .btn-danger {
+    background: url('../../assets/images/background.png') no-repeat center center !important;
+    color: #fff !important;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    min-width: 140px; 
+  }
+  
+  .btn-primary:hover, .btn-danger:hover {
+    background: url('../../assets/images/background.png') no-repeat center center !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  

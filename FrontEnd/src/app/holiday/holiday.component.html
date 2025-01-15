@@ -1,0 +1,46 @@
+<div class="home-layout">
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+  
+    <div class="main-container">
+      <aside class="sidebar" [class.closed]="isSidebarClosed">
+        <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
+      </aside>
+  
+      <main class="main-content" [class.sidebar-closed]="isSidebarClosed">
+        <!-- Titre -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h2 class="mb-0">{{ currentView === 'calendar' ? 'View Calendar' : currentView === 'holiday' ? 'Add Holiday' : 'Day View' }}</h2>
+        </div>
+        <div class="content-wrapper">
+          <div class="btn-group mb-3" role="group">
+            <button type="button" 
+                    class="btn view-calendar-btn" 
+                    [ngClass]="{'btn-active': currentView === 'calendar'}" 
+                    (click)="switchView('calendar')">
+              View calendar
+            </button>
+            <button type="button" 
+                    class="btn view-task-btn" 
+                    [ngClass]="{'btn-active': currentView === 'holiday'}" 
+                    (click)="switchView('holiday')">
+              Add Holiday
+            </button>
+          </div>
+  
+          <div *ngIf="currentView === 'calendar'">
+            <app-calendar-holidays [currentMonth]="currentMonth" (daySelected)="selectDay($event)"></app-calendar-holidays>
+          </div>
+  
+          <div *ngIf="currentView === 'holiday'">
+            <app-add-holiday></app-add-holiday>
+          </div>
+  
+          <div *ngIf="currentView === 'day' && selectedDate">
+            <app-day-view [dayViewDate]="selectedDate"></app-day-view>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>

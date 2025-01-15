@@ -1,0 +1,88 @@
+<div class="home-layout">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+  <div class="main-container">
+    <aside class="sidebar" [class.closed]="isSidebarClosed">
+      <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
+    </aside>
+    <main class="main-content" [class.sidebar-closed]="isSidebarClosed">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="mb-0">{{ currentView === 'user-list' ? 'Users Management' : 'Add User' }}</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="btn-group mb-5" role="group">
+          <button type="button" 
+                  class="btn view-users-btn" 
+                  [ngClass]="{'btn-active': currentView === 'user-list'}" 
+                  (click)="switchView('user-list')">
+            Manage Users
+          </button>
+          <button type="button" 
+                  class="btn add-user-btn" 
+                  [ngClass]="{'btn-active': currentView === 'add-user'}" 
+                  (click)="switchView('add-user')">
+            Add User
+          </button>
+        </div>
+        <div *ngIf="currentView === 'user-list'">
+          <div class="users-container">
+            <form id="content" class="search-form">
+              <input #searchInput type="text" name="input" class="input lens" [ngClass]="iptClass" (input)="applyFilter(searchInput.value)" placeholder="Rechercher...">
+              <button type="reset" class="search" [ngClass]="btnClass" (click)="btnClickHandler()"></button>
+            </form>
+            <div class="user-table-container">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+                <ng-container matColumnDef="nom">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+                  <td mat-cell *matCellDef="let user">{{ user.nom }}</td>
+                </ng-container>
+                <ng-container matColumnDef="prenom">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</th>
+                  <td mat-cell *matCellDef="let user">{{ user.prenom }}</td>
+                </ng-container>
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+                  <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+                </ng-container>
+                <ng-container matColumnDef="phoneNumber">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Téléphone</th>
+                  <td mat-cell *matCellDef="let user">{{ user.phoneNumber }}</td>
+                </ng-container>
+                <ng-container matColumnDef="roles">
+                  <th mat-header-cell *matHeaderCellDef>Rôle</th>
+                  <td mat-cell *matCellDef="let user">
+                    <span *ngFor="let role of user.roles" class="role-badge">{{ role }}</span>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef>Status</th>
+                  <td mat-cell *matCellDef="let user">
+                    <mat-chip [color]="user.accountStatus === 'Activated' ? 'primary' : 'warn'" 
+                              [ngClass]="{'activated': user.accountStatus === 'Activated', 'deactivated': user.accountStatus !== 'Activated'}">
+                      {{ user.accountStatus }}
+                    </mat-chip>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef>Action</th>
+                  <td mat-cell *matCellDef="let user">
+                    <button mat-icon-button color="warn" (click)="confirmDelete(user.id, user.email)" aria-label="Delete">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="currentView === 'add-user'">
+          <app-add-user-form></app-add-user-form> 
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+/* Style for the modal container */
+.modal {
+    max-width: 100%;
+    margin: auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* General form group styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Input and select styling */
+  input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Error message styling */
+  .error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+  }
+  
+  button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Add responsive styling */
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

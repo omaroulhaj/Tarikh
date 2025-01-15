@@ -1,0 +1,67 @@
+# Répertoires de compilation (ignorés pour ne pas suivre les fichiers d'exécution)
+BackEnd/bin/
+BackEnd/obj/
+
+# Répertoire de configuration de Visual Studio (ignoré)
+BackEnd/.vs/
+# Ignorer les fichiers de configuration sensibles
+BackEnd/appsettings.json
+
+# Fichiers de configuration spécifiques à l'utilisateur (ignorés)
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Fichiers de configuration Angular (ignorés)
+FrontEnd/node_modules/
+FrontEnd/.angular/
+# Autres fichiers temporaires (ignorés)
+*.log
+
+# Compiled output (ignorés)
+FrontEnd/dist
+FrontEnd/tmp
+FrontEnd/out-tsc
+FrontEnd/bazel-out
+# Ignorer les fichiers binaires et de cache de Visual Studio
+BackEnd/.vs/**/*.bin
+BackEnd/.vs/**/*.v8
+BackEnd/.vs/ProjectEvaluation/
+BackEnd/.vs/TarikhMaghribi/DesignTimeBuild/
+BackEnd/.vs/TarikhMaghribi/config/applicationhost.config
+
+# Node (ignorés)
+FrontEnd/node_modules
+FrontEnd/npm-debug.log
+FrontEnd/yarn-error.log
+
+# IDEs and editors (ignorés)
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code (ignoré, sauf les fichiers de configuration)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous (ignorés)
+FrontEnd/.angular/cache
+.sass-cache/
+FrontEnd/connect.lock
+FrontEnd/coverage
+FrontEnd/libpeerconnection.log
+FrontEnd/testem.log
+FrontEnd/typings
+
+# System files (ignorés)
+.DS_Store
+Thumbs.db

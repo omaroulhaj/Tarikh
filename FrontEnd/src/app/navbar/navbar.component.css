@@ -1,0 +1,91 @@
+/* Styles communs */
+.user-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: url('../../assets/images/background.png') no-repeat center center;
+  background-size: cover; 
+  color: white;
+  border-radius: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: none;
+}
+
+.user-button:hover {
+  background:white !important;
+  color: rgb(0, 0, 0);
+  transform: translateY(-2px);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.online-status {
+  font-size: 14px;
+  color: #4caf50;
+  margin-left: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-drawer {
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+mat-drawer[ng-reflect-opened="false"] {
+  width: 56px;
+}
+
+.app-logo {
+  height: 50px;
+  width: 100px;
+  margin-left: 30px;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+
+.nav-text {
+  transition: opacity 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+  opacity: 1;
+  margin-left: 8px;
+}
+
+mat-drawer[ng-reflect-opened="false"] .nav-text {
+  opacity: 0;
+  margin-left: -100px;
+}
+
+mat-drawer[ng-reflect-opened="false"] mat-icon {
+  margin-right: 0;
+}
+
+.navbar {
+  background-color: #ffffff !important;
+  color: #3b3b3b;
+}
+
+.fiber-manual-record {
+  color: greenyellow;
+}
