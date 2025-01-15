@@ -19,29 +19,24 @@ namespace TarikhMaghribi.Services.Implementations
         }
         public async Task<List<UserDto>> GetUsers(string currentUserId)
         {
+            
+
             var users = await _userManager.Users
-                .Where(user => user.Id != currentUserId)
-                .ToListAsync();
-
-            var result = new List<UserDto>();
-            foreach (var user in users)
+            .Where(user => user.Id != currentUserId)
+            .Select(user => new UserDto
             {
-                var roles = await _userManager.GetRolesAsync(user);
+                Id = user.Id,
+                Username = $"{user.Prenom} {user.Nom}",
+                Email = user.Email,
+                Prenom = user.Prenom,
+                Nom = user.Nom,
+                PhoneNumber = user.PhoneNumber,
+                AccountStatus = user.EmailConfirmed ? "Activated" : "Pending"
+            })
+            .ToListAsync();
 
-                result.Add(new UserDto
-                {
-                    Id = user.Id,
-                    Username = $"{user.Prenom} {user.Nom}",
-                    Email = user.Email,
-                    Prenom = user.Prenom,
-                    Nom = user.Nom,
-                    PhoneNumber = user.PhoneNumber,
-                    Roles = roles.ToList(),
-                    AccountStatus = user.EmailConfirmed ? "Activated" : "Pending"
-                });
-            }
 
-            return result;
+            return users;
         }
         public async Task<UserDetailsDto> GetUserDetails(string userId)
         {

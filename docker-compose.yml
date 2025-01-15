@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./FrontEnd  # Chemin vers le dossier contenant le Dockerfile du frontend
+      dockerfile: Dockerfile  # Nom du Dockerfile (par défaut, Dockerfile)
+    container_name: frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+  backend:
+    build:
+      context: ./BackEnd  # Chemin vers le dossier contenant le Dockerfile du backend
+      dockerfile: Dockerfile  # Nom du Dockerfile (par défaut, Dockerfile)
+    container_name: backend
+    ports:
+      - "7200:8080"  # Expose le port 7200
+    networks:
+      - app-network
+
+networks:
+  app-network:

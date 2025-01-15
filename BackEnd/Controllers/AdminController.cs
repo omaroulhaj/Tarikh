@@ -21,9 +21,10 @@ namespace TarikhMaghribi.Controllers
         private readonly IAdminService _adminService;
         private readonly UserManager<AppUser> _userManager;
 
-        public AdminController(IJourFerieService jourFerieService,UserManager<AppUser> userManager)
+        public AdminController(IJourFerieService jourFerieService,UserManager<AppUser> userManager,IAdminService adminService)
         {
             _jourFerieService = jourFerieService;
+            _adminService = adminService;
             _userManager = userManager;
         }
 

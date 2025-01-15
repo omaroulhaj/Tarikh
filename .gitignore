@@ -35,7 +35,8 @@ BackEnd/.vs/TarikhMaghribi/config/applicationhost.config
 FrontEnd/node_modules
 FrontEnd/npm-debug.log
 FrontEnd/yarn-error.log
-
+FrontEnd/nginx.conf
+FrontEnd/Dockerfile
 # IDEs and editors (ignorés)
 .idea/
 .project
