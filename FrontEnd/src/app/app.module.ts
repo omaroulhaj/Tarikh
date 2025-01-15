@@ -45,6 +45,7 @@ import { DayViewComponent } from './day-view/day-view.component';
 import { HolidayComponent } from './holiday/holiday.component';
 import { AddHolidayComponent } from './add-holiday/add-holiday.component';
 import { CalendarHolidaysComponent } from './calendar-holidays/calendar-holidays.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { CalendarHolidaysComponent } from './calendar-holidays/calendar-holidays
   providers: [
     provideHttpClient(withFetch()),
     MatDatepickerModule,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

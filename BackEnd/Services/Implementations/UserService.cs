@@ -39,7 +39,7 @@ namespace TarikhMaghribi.Services.Implementations
         public async Task<IActionResult> UpdateUserProfile(string userId, UserProfileUpdateDto model)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            if (user == null) return new NotFoundObjectResult("User not found.");
+            if (user == null) return new NotFoundObjectResult(new { message = "User not found." });
 
             user.Nom = model.Nom;
             user.Prenom = model.Prenom;
@@ -49,9 +49,13 @@ namespace TarikhMaghribi.Services.Implementations
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return new OkObjectResult("User profile updated successfully.");
+                return new OkObjectResult(new { message=  "User profile updated successfully." });
             }
-            return new BadRequestObjectResult(result.Errors);
+            else
+            {
+            return new BadRequestObjectResult(new { result.Errors });
+
+            }
         }
 
         public async Task<IActionResult> ChangePassword(string userId, ChangePasswordDto request)
@@ -62,18 +66,18 @@ namespace TarikhMaghribi.Services.Implementations
             var result = await _userManager.ChangePasswordAsync(user, request.CurrentPassword, request.NewPassword);
             if (result.Succeeded)
             {
-                return new OkObjectResult("Password changed successfully.");
+                return new OkObjectResult(new { message = "Password changed successfully." });
             }
-            return new BadRequestObjectResult(result.Errors);
+            return new BadRequestObjectResult(new { result.Errors });
         }
 
         public async Task<IActionResult> DeleteUserAccount(string userId, string password)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            if (user == null) return new NotFoundObjectResult("User not found.");
+            if (user == null) return new NotFoundObjectResult(new { message = "User not found." });
 
             var passwordValid = await _userManager.CheckPasswordAsync(user, password);
-            if (!passwordValid) return new BadRequestObjectResult("Incorrect password.");
+            if (!passwordValid) return new BadRequestObjectResult(new { message ="Incorrect password." });
 
             // Remove all tasks associated with the user
             var userTasks = _context.Tasks.Where(t => t.UserId == userId);
@@ -86,9 +90,9 @@ namespace TarikhMaghribi.Services.Implementations
                 var result = await _userManager.DeleteAsync(user);
                 if (result.Succeeded)
                 {
-                    return new OkObjectResult("Account and associated tasks deleted successfully.");
+                    return new OkObjectResult(new { message = "Account and associated tasks deleted successfully." });
                 }
-                return new BadRequestObjectResult("Failed to delete account.");
+                return new BadRequestObjectResult(new { message = "Failed to delete account." });
             }
             catch (Exception ex)
             {
