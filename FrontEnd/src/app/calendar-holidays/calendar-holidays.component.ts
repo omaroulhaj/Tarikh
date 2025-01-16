@@ -1,27 +1,29 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TaskService } from '../services/task.service';
+import { HolidayService } from '../services/holiday.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-calendar-holidays',
   templateUrl: './calendar-holidays.component.html',
-  styleUrl: './calendar-holidays.component.css'
+  styleUrls: ['./calendar-holidays.component.css']
 })
-export class CalendarHolidaysComponent implements OnInit{
+export class CalendarHolidaysComponent implements OnInit {
   @Input() currentMonth: Date = new Date();
   @Output() daySelected = new EventEmitter<Date>();
+
   calendarWeeks: { date: Date; otherMonth: boolean }[][] = [];
-  holidays: { [date: string]: { title: string; status: string }[] } = {};
+  holidays: { [date: string]: { title: string; status: string; details: string }[] } = {};
   searchQuery: string = '';
   statusFilter: string = '';
 
-  constructor(private taskService: TaskService, private datePipe: DatePipe) {}
+  constructor(private holidayService: HolidayService, private datePipe: DatePipe) {}
 
   ngOnInit() {
     this.generateCalendar();
-    this.loadTasksForMonth();
+    this.loadHolidaysForMonth();
   }
 
+  // Génération du calendrier
   generateCalendar() {
     const firstDayOfMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth(), 1);
     const lastDayOfMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1, 0);
@@ -50,52 +52,82 @@ export class CalendarHolidaysComponent implements OnInit{
     }
   }
 
+  // Changer le mois précédent
   previousMonth() {
     this.currentMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() - 1, 1);
     this.generateCalendar();
-    this.loadTasksForMonth();
+    this.loadHolidaysForMonth();
   }
 
+  // Changer le mois suivant
   nextMonth() {
     this.currentMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1, 1);
     this.generateCalendar();
-    this.loadTasksForMonth();
+    this.loadHolidaysForMonth();
   }
 
+  // Sélectionner un jour
   selectDay(date: Date) {
     this.daySelected.emit(date);
   }
 
-  loadTasksForMonth() {
-    const year = this.currentMonth.getFullYear();
-    const month = this.currentMonth.getMonth() + 1;
-    this.taskService.getTasksByMonthAndYear(year, month).subscribe(
-      (tasks: any) => {
+  // Charger les jours fériés pour le mois
+  loadHolidaysForMonth() {
+    this.holidayService.getHolidays().subscribe(
+      (response: any) => {
+        console.log('Réponse de l\'API:', response);
+
+        const holidays = response.joursFeries || []; // Adapter en fonction de votre API
+        if (!Array.isArray(holidays)) {
+          console.error('Les jours fériés ne sont pas dans un format valide (attendu un tableau).');
+          return;
+        }
+
         this.holidays = {};
-        tasks.forEach((task: any) => {
-          const dateKey = this.datePipe.transform(new Date(task.date), 'yyyy-MM-dd')!;
+        holidays.forEach((holiday: any) => {
+          const parsedDate = new Date(holiday.dateJour);
+          const dateKey = this.datePipe.transform(parsedDate, 'yyyy-MM-dd')!;
+
           if (!this.holidays[dateKey]) {
             this.holidays[dateKey] = [];
           }
-          this.holidays[dateKey].push({ title: task.title, status: task.status });
+
+          this.holidays[dateKey].push({
+            title: holiday.nom,
+            status: holiday.categorie,
+            details: holiday.details,
+          });
         });
+
+        console.log('Objet des jours fériés:', this.holidays);
       },
       (error) => {
-        console.error('Error loading tasks:', error);
+        console.error('Erreur lors du chargement des jours fériés:', error);
       }
     );
   }
 
-  filterTasks() {
-    this.loadTasksForMonth();
+  // Méthode pour générer les classes du jour
+  getDayClasses(day: { date: Date; otherMonth: boolean }) {
+    const isHoliday = this.getFilteredHolidaysForDay(day.date).length > 0;
+    const isCurrentDay = day.date.toDateString() === new Date().toDateString();
+
+    return {
+      'other-month': day.otherMonth,
+      'holiday-day': isHoliday,
+      'current-day': isCurrentDay,
+    };
   }
 
-  getFilteredTasksForDay(date: Date) {
+  // Méthode pour filtrer les jours fériés d'un jour spécifique
+  getFilteredHolidaysForDay(date: Date) {
     const dateKey = this.datePipe.transform(date, 'yyyy-MM-dd')!;
-    const tasks = this.holidays[dateKey] || [];
-    return tasks.filter(task =>
-      task.title.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
-      (this.statusFilter === '')
+    const holidays = this.holidays[dateKey] || [];
+
+    return holidays.filter(
+      (holiday) =>
+        holiday.title.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
+        (this.statusFilter === '' || holiday.status === this.statusFilter)
     );
   }
 }

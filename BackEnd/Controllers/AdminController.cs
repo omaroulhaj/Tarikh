@@ -98,7 +98,7 @@ namespace TarikhMaghribi.Controllers
             try
             {
                 var joursFeries = await _jourFerieService.GetAllJoursFeries();
-                return Ok(joursFeries);
+                return Ok(new { joursFeries });
             }
             catch (Exception ex)
             {

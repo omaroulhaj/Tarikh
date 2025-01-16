@@ -25,7 +25,7 @@ export class HolidayService {
   // Méthode pour obtenir les jours fériés
   getHolidays(): Observable<any[]> {
     const headers = this.getAuthHeaders(); // Inclut l'en-tête d'authentification
-    return this.http.get<any[]>(`${this.apiUrl}/create-jour-ferie`, { headers });
+    return this.http.get<any[]>(`${this.apiUrl}/jours-feries`, { headers });
   }
 
   // Méthode pour ajouter un jour férié

@@ -1,41 +1,42 @@
 <div class="calendar-view">
-    <!-- Contrôles du calendrier -->
-    <div class="calendar-controls">
-      <button class="btn btn-secondary previous-month-btn" (click)="previousMonth()">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <h2 class="calendar-month">{{ currentMonth | date: 'MMMM yyyy' }}</h2>
-      <button class="btn btn-secondary next-month-btn" (click)="nextMonth()">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+  <!-- Contrôles du calendrier -->
+  <div class="calendar-controls">
+    <button class="btn btn-secondary previous-month-btn" (click)="previousMonth()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <h2 class="calendar-month">{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+    <button class="btn btn-secondary next-month-btn" (click)="nextMonth()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Filtres -->
+  <div class="filters">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Filtrer les jours fériés..." (input)="loadHolidaysForMonth()">
+  </div>
+
+  <!-- En-tête du calendrier -->
+  <div class="calendar-header">
+    <div *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" class="calendar-day-header">
+      {{ day }}
     </div>
-  
-    <!-- Filtres -->
-    <div class="filters">
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Filtrer par titre..." (input)="filterTasks()">
-    </div>
-  
-    <!-- En-tête du calendrier -->
-    <div class="calendar-header">
-      <div *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" class="calendar-day-header">
-        {{ day }}
-      </div>
-    </div>
-  
-    <!-- Corps du calendrier -->
-    <div class="calendar-body">
-      <div *ngFor="let week of calendarWeeks" class="calendar-week">
-        <div *ngFor="let day of week"
-             class="calendar-day"
-             [ngClass]="{'other-month': day.otherMonth}"
-             (click)="selectDay(day.date)">
-          <div class="calendar-date">{{ day.date | date: 'dd' }}</div>
-          <div class="calendar-task-container">
-            <div *ngFor="let task of getFilteredTasksForDay(day.date)" class="calendar-task">
-              <span class="task-title">{{ task.title }}</span>
-            </div>
+  </div>
+
+  <!-- Corps du calendrier -->
+  <div class="calendar-body">
+    <div *ngFor="let week of calendarWeeks" class="calendar-week">
+      <div *ngFor="let day of week"
+           class="calendar-day"
+           [ngClass]="getDayClasses(day)"
+           (click)="selectDay(day.date)">
+        <div class="calendar-date">{{ day.date | date: 'dd' }}</div>
+        <div class="calendar-holiday-container">
+          <div *ngFor="let holiday of getFilteredHolidaysForDay(day.date)" class="calendar-holiday" [title]="holiday.details">
+            <span class="holiday-title">{{ holiday.title }}</span>
           </div>
+       
         </div>
       </div>
     </div>
   </div>
+</div>
